@@ -2,11 +2,14 @@
   <head>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1><%= site_title %></h1>
 
     <% posts.each do |post| %>
       <div><%= post.title %></div>
-      <div><%= post.content %></div>
+      <div><%= post.synopsis %></div>
+      <div><%= post.video %></div>
+      <div><%= post.start_time %></div>
+      <div><%= post.duration %></div>
       <% post.tags.each do |tag| %>
         <div><%= tag %></div>
       <% end %>
