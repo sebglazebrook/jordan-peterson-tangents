@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require "sinatra/reloader"
+require "sinatra/activerecord"
 
 require "ostruct"
 def posts_data
@@ -24,6 +25,10 @@ def posts_data
 end
 
 class App < Sinatra::Base
+
+  set :database_file, "/app/config/database.yml"
+  register Sinatra::ActiveRecordExtension
+
   configure :development do
     register Sinatra::Reloader
   end

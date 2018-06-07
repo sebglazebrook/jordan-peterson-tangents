@@ -1,5 +1,7 @@
 FROM ruby:alpine
 
+RUN apk --update add build-base sqlite-dev
+
 WORKDIR /app
 
 EXPOSE 9292
