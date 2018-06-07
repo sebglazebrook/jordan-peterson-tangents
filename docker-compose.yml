@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  appserver:
+    build: .
+    ports:
+      - 9292:9292
