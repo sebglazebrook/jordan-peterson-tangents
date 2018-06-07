@@ -29,7 +29,7 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    erb :index, locals: { site_title: "Hello World!", posts: posts_data }
+    erb :index, locals: { site_title: "Jordan Peterson Tangents", posts: posts_data }
   end
 
   run! if app_file == $0
