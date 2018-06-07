@@ -1,18 +1,74 @@
 <html>
   <head>
+  <style>
+body {
+  padding: 2em;
+}
+.wrapper {
+  display: flex;
+	flex-flow: row wrap;
+}
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+@media all and (min-width: 600px) {
+  .left-buffer { flex: 1 auto; }
+}
+
+@media all and (min-width: 800px) {
+  .content-container { flex: 3 0px; }
+  .left-buffer { order: 1; }
+  .content-container { order: 2; }
+  .right-buffer { order: 3; }
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+}
+.post-metadata {
+  display: flex;
+  flex-direction: column;
+}
+.post-metadata, div {
+    padding-right: 15px;
+}
+.post-metadata-timing-data {
+  display: flex;
+  flex-direction: row;
+}
+.post-metadata-tags {
+  display: flex;
+  flex-direction: row;
+}
+  </style>
   </head>
   <body>
-    <h1><%= site_title %></h1>
+    <div class="wrapper">
+    <div class="content-container">
+      <h1><%= site_title %></h1>
 
-    <% posts.each do |post| %>
-      <div><%= post.title %></div>
-      <div><%= post.synopsis %></div>
-      <div><%= post.video %></div>
-      <div><%= post.start_time %></div>
-      <div><%= post.duration %></div>
-      <% post.tags.each do |tag| %>
-        <div><%= tag %></div>
+      <% posts.each do |post| %>
+        <div class="post">
+          <h2 class="post-title"><%= post.title %></h2>
+          <div class="post-synopsis"><%= post.synopsis %></div>
+          <div class="post-video"><iframe width="420" height="315" src="<%= post.video %>"></iframe></div>
+          <div class="post-metadata">
+            <div class="post-metadata-timing-data">
+              <div class="post-metadata-start-time">Starts: <%= post.start_time %></div>
+              <div class="post-metadata-duration">Duration: <%= post.duration %></div>
+            </div> <!-- post-metadata-timing-data -->
+            <div class="post-metadata-tags">
+              <% post.tags.each do |tag| %>
+                <div><%= tag %></div>
+              <% end %>
+            </div> <!-- .post-metadata-tags -->
+          </div> <!-- .post-metadata -->
+        </div> <!-- .post -->
       <% end %>
-    <% end %>
+    </div> <!-- .content-container -->
+    <div class="left-buffer"></div>
+    <div class="right-buffer"></div>
+    </div> <!-- .wrapper -->
   </body>
 </html>
