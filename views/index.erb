@@ -1,0 +1,15 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+
+    <% posts.each do |post| %>
+      <div><%= post.title %></div>
+      <div><%= post.content %></div>
+      <% post.tags.each do |tag| %>
+        <div><%= tag %></div>
+      <% end %>
+    <% end %>
+  </body>
+</html>
