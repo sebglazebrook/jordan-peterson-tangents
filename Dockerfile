@@ -12,4 +12,4 @@ RUN bundle install
 
 COPY . /app/
 
-CMD  rackup --host 0.0.0.0
+CMD bundle exec rackup --host 0.0.0.0
