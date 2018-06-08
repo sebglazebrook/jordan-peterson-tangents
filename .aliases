@@ -7,6 +7,12 @@ dc:
   command: docker-compose
 up:
   command: dc up
+build:
+  command: docker build -t sebglazebrook/jordan-peterson-tangents:latest .
+publish:
+  command: docker push sebglazebrook/jordan-peterson-tangents:latest
+release:
+  command: echo 'todo'
 #alias_name:
 #  command: ./super_command.sh                         # required
 #  confirm: true                                       # optional
