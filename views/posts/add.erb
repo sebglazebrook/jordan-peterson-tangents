@@ -1,15 +1,60 @@
 <html>
   <head>
+  <style>
+body {
+  padding: 2em;
+}
+.wrapper {
+  display: flex;
+	flex-flow: row wrap;
+}
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+@media all and (min-width: 600px) {
+  .left-buffer { flex: 1 auto; }
+}
+
+@media all and (min-width: 800px) {
+  .content-container { flex: 3 0px; }
+  .left-buffer { order: 1; }
+  .content-container { order: 2; }
+  .right-buffer { order: 3; }
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.form, input {
+  width: 65%;
+}
+  </style>
   </head>
   <body>
-    <h1>Tell us about a JP tangent</h1>
-    <form action="/posts" method="post">
-      <input type="text" name="post[][title]">
-      <input type="text" name="post[][synopsis]">
-      <input type="text" name="post[][video_url]">
-      <input type="text" name="post[][start_time]">
-      <input type="text" name="post[][duration]">
-      <input type="submit" value="Submit">
-    </form>
+    <div class="wrapper">
+      <div class="content-container">
+        <h1>Share a JP tangent with the world</h1>
+        <form action="/posts" method="post">
+          <label>Title</label>
+          <input type="text" name="post[][title]">
+          <label>Short summary of the tangent</label>
+          <input type="text" name="post[][synopsis]">
+          <label>Youtube URL</label>
+          <input type="text" name="post[][video_url]">
+          <label>When does the tangent start?</label>
+          <input type="text" name="post[][start_time]">
+          <label>How long does the tangent last?</label>
+          <input type="text" name="post[][duration]">
+          <input type="submit" value="Add">
+        </form>
+      </div> <!-- .content-container -->
+    <div class="left-buffer"></div>
+    <div class="right-buffer"></div>
+    </div> <!-- .wrapper -->
   </body>
 </html>
