@@ -17,5 +17,14 @@ class App < Sinatra::Base
     erb :index, locals: { site_title: "Jordan Peterson Tangents", posts: Post.all }
   end
 
+  get '/posts/add' do
+    erb :"posts/add", locals: {}
+  end
+
+  post '/posts' do
+    Post.create!(params["post"]) # TODO handle errors and messaging
+    redirect "/"
+  end
+
   run! if app_file == $0
 end
