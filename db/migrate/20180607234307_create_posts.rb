@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       table.string :video_url
       table.string :start_time
       table.string :duration
+      table.timestamps
     end
   end
 end
