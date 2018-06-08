@@ -10,6 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_06_08_022502) do
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "synopsis"
+    t.string "video_url"
+    t.string "start_time"
+    t.string "duration"
+  end
+
+  create_table "posts_tags", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "post_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "text"
+  end
 
 end
