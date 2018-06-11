@@ -1,75 +1,55 @@
+<!DOCTYPE html>
 <html>
   <head>
-  <style>
-body {
-  padding: 2em;
-}
-.wrapper {
-  display: flex;
-	flex-flow: row wrap;
-}
-.wrapper > * {
-  padding: 10px;
-  flex: 1 100%;
-}
-@media all and (min-width: 600px) {
-  .left-buffer { flex: 1 auto; }
-}
-
-@media all and (min-width: 800px) {
-  .content-container { flex: 3 0px; }
-  .left-buffer { order: 1; }
-  .content-container { order: 2; }
-  .right-buffer { order: 3; }
-}
-.content-container {
-  display: flex;
-  flex-direction: column;
-}
-.post-metadata {
-  display: flex;
-  flex-direction: column;
-}
-.post-metadata, div {
-    padding-right: 15px;
-}
-.post-metadata-timing-data {
-  display: flex;
-  flex-direction: row;
-}
-.post-metadata-tags {
-  display: flex;
-  flex-direction: row;
-}
-  </style>
+    <link rel='stylesheet' type='text/css' href='/stylesheets/styles.css'></link>
   </head>
   <body>
-    <div class="wrapper">
-    <div class="content-container">
-      <h1><%= site_title %></h1>
-      <a href="/posts/add">+</a>
-
-      <% posts.each do |post| %>
-        <div class="post">
-          <h2 class="post-title"><%= post.title %></h2>
-          <div class="post-synopsis"><%= post.synopsis %></div>
-          <div class="post-video"><iframe width="420" height="315" src="<%= post.video_url %>"></iframe></div>
-          <div class="post-metadata">
-            <div class="post-metadata-timing-data">
-              <div class="post-metadata-start-time">Starts: <%= post.start_time %></div>
-              <div class="post-metadata-duration">Duration: <%= post.duration %></div>
-            </div> <!-- post-metadata-timing-data -->
-            <div class="post-metadata-tags">
-              <% post.tags.each do |tag| %>
-                <div><%= tag.text %></div>
-              <% end %>
-            </div> <!-- .post-metadata-tags -->
-          </div> <!-- .post-metadata -->
-        </div> <!-- .post -->
-      <% end %>
-    </div> <!-- .content-container -->
-    <div class="left-buffer"></div>
-    <div class="right-buffer"></div>
-    </div> <!-- .wrapper -->
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="header">
+          <div class="title">
+            <%= site_title %>
+          </div>
+          <div class="add">
+            <div class="link-wrapper">
+              <a href="/posts/add">+</a>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <% posts.each do |post| %>
+            <div class="post">
+              <div class="title">
+                <%= post.title %>
+              </div>
+              <div class="video-wrapper">
+                <div class="video">
+                  <iframe width="100%" height="315" src="<%= post.video_url %>"></iframe>
+                </div>
+                <div class="metadata">
+                  <div class="start-time">
+                    Starts: <%= post.start_time %>
+                  </div>
+                  <div class="duration">
+                    Duration: <%= post.duration %>
+                  </div>
+                  <div class="tags">
+                    <% post.tags.each do |tag| %>
+                      <div><%= tag.text %></div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="summary">
+                <%= post.synopsis %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="footer"></div>
+      </div>
+      <div class="left-buffer"></div>
+      <div class="right-buffer"></div>
+    </div>
   </body>
 </html>

@@ -2,14 +2,16 @@ TODOs
 ----
 
 - add data
-- start using JS and make single page app
+- make it look good on mobile
 
 Next
 ----
 
+- start using JS and make single page app
 - add some type of post/user verification
 - allow user to add tags
-- automate deploy
 
 Later
 -----
+- automate deploy
+- add search capability
