@@ -12,4 +12,12 @@ build:
 publish:
   command: docker push sebglazebrook/jordan-peterson-tangents:latest
 release:
-  command: ssh-personal-cluster-master 'docker pull sebglazebrook/jordan-peterson-tangents:latest && docker stop jordan-peterson-tangents && docker rm jordan-peterson-tangents && docker run -tid -e RACK_ENV=production -p 9292:9292 --name jordan-peterson-tangents -v /data/jordan-peterson-tangents/db/:/data/db/ sebglazebrook/jordan-peterson-tangents:latest'
+  command: |
+    ssh-personal-cluster-master << EOF
+      echo '>> pulling latest'
+      docker pull sebglazebrook/jordan-peterson-tangents:latest
+      echo '>> deleting old'
+      docker rm -f jordan-peterson-tangents
+      echo '>> starting new'
+      docker run -tid -e RACK_ENV=production -p 9292:9292 --name jordan-peterson-tangents -v /data/jordan-peterson-tangents/db/:/data/db/ sebglazebrook/jordan-peterson-tangents:latest
+    EOF
