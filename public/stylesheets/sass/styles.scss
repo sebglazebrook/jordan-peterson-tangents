@@ -1,6 +1,14 @@
 html {
-  font-size: 2vw;
+  font-size: 16px;
   font-family: Arial;
+
+  @media screen and (min-width: 50em) {
+    font-size: 2vw;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 20px;
+  }
 }
 .outer-container {
   display: flex;
