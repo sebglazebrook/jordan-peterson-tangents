@@ -43,6 +43,7 @@ html {
 
 .header {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   margin-bottom: 1em;
   padding-bottom: 0.25em;
@@ -53,13 +54,11 @@ html {
     display: flex;
     align-items: center;
     .link-wrapper {
-      background-color: blue;
-      border-radius: 50%;
       text-align: center;
       a {
         text-decoration: none;
         font-size: 2.5em;
-        color: white;
+        color: black;
       }
     }
   }
