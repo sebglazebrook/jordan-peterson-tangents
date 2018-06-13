@@ -1,7 +1,6 @@
 TODOs
 ----
 
-- start videos from right spot
 - add data
 
 Next
@@ -9,6 +8,7 @@ Next
 
 - start using JS and make single page app
 - add some type of post/user verification
+- start videos from right spot
 - allow user to add tags
 
 Later
