@@ -7,3 +7,9 @@ services:
       - 9292:9292
     volumes:
       - ./:/app/
+  webpack_asset_builder:
+    build:
+      context: .
+      dockerfile: Dockerfile.webpack-asset-builder
+    volumes:
+      - ./:/app/

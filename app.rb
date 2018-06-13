@@ -6,6 +6,7 @@ require_relative "./lib/models/tag"
 
 class App < Sinatra::Base
 
+  set :public_folder, '/app/public'
   set :database_file, "/app/config/database.yml"
   register Sinatra::ActiveRecordExtension
 

@@ -1,2 +1,4 @@
 db/*.sqlite3
 .sass-cache/
+node_modules/
+public/javascripts/
