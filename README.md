@@ -1,8 +1,8 @@
 TODOs
 ----
 
+- start videos from right spot
 - add data
-- make it look good on mobile
 
 Next
 ----
@@ -16,3 +16,4 @@ Later
 - https
 - automate deploy
 - add search capability
+- improve the styling
