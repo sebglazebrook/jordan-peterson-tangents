@@ -1,9 +1,10 @@
 html {
-  font-size: 16px;
+  font-size: calc(1em + 1vw);
+  color: #222;
   font-family: Arial;
 
-  @media screen and (min-width: 50em) {
-    font-size: 2vw;
+  @media screen and (min-width: 75em) {
+    font-size: 1.5em;
   }
 
   @media screen and (min-width: 1024px) {
@@ -43,8 +44,10 @@ html {
 .header {
   display: flex;
   flex-direction: row;
+  margin-bottom: 1em;
+  padding-bottom: 0.25em;
   .title {
-    font-size: 4em;
+    font-size: 2.5em;
   }
   .add {
     display: flex;
@@ -55,7 +58,7 @@ html {
       text-align: center;
       a {
         text-decoration: none;
-        font-size: 6em;
+        font-size: 2.5em;
         color: white;
       }
     }
@@ -71,14 +74,14 @@ html {
 
 .post {
   flex-direction: column;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   .title {
-    font-size: 10em;
+    font-size: 4em;
   }
   .summary {
-    font-size: 4em;
+    font-size: 2em;
     background-color: #f6f6f6;
-    padding-bottom: 16px;
+    padding: 0.125em;
   }
   .video-wrapper {
     display: flex;
@@ -87,9 +90,11 @@ html {
     .video {
     }
     .metadata {
-      font-size: 1.5em;
+      font-size: 1em;
+      color: #b1b2b2;
       display: flex;
       flex-direction: row;
+      padding: 0.25em 0.25em 0 0.25em;
 
       div {
         padding-right: 15px;
