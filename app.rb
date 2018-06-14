@@ -15,7 +15,7 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    erb :index, locals: { site_title: "Jordan Peterson Tangents", posts: Post.all }
+    erb :index, locals: { site_title: "Jordan Peterson Tangents", posts: Post.all, inline_javascript: File.read("/app/public/javascripts/inline.js"), inline_styles: File.read("/app/public/stylesheets/styles.css") }
   end
 
   get '/posts/add' do

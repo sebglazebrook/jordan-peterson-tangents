@@ -1,6 +1,9 @@
 TODOs
 ----
 
+Now
+---
+
 - add data
 
 Next
@@ -14,6 +17,6 @@ Next
 Later
 -----
 - https
-- automate deploy
 - add search capability
 - improve the styling
+- add routes

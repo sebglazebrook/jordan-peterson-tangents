@@ -3,9 +3,12 @@ const webpack = require('webpack');
 const env = require('good-env')
 
 module.exports = {
-  entry: './lib/javascripts/test.js',
+  entry: {
+    inline: './lib/javascripts/inline.js',
+    test: './lib/javascripts/test.js',
+  },
   output: {
-    filename: 'test.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'public', 'javascripts')
   },
   module: {
