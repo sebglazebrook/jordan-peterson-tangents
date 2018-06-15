@@ -28,7 +28,10 @@
     "webpack-cli": "^3.0.4"
   },
   "dependencies": {
+    "babel-preset-react": "^6.24.1",
     "good-env": "^3.0.0",
-    "npx": "^10.2.0"
+    "npx": "^10.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   }
 }
