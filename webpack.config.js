@@ -5,7 +5,7 @@ const env = require('good-env')
 module.exports = {
   entry: {
     inline: './lib/javascripts/inline.js',
-    test: './lib/javascripts/test.js',
+    application: './lib/javascripts/application.js',
   },
   output: {
     filename: '[name].js',
