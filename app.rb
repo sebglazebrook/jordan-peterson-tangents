@@ -3,8 +3,10 @@ require "sinatra/reloader"
 require "sinatra/activerecord"
 require_relative "./lib/models/post"
 require_relative "./lib/models/tag"
+require "rack/etag"
 
 class App < Sinatra::Base
+  use Rack::ETag
 
   set :public_folder, '/app/public'
   set :database_file, "/app/config/database.yml"
