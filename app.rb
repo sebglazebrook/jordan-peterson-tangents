@@ -17,11 +17,11 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    erb :index, locals: { site_title: "Jordan Peterson Tangents", posts: Post.all, inline_javascript: File.read("/app/public/javascripts/inline.js"), inline_styles: File.read("/app/public/stylesheets/styles.css") }
+    erb :index, locals: { site_title: "Jordan Peterson Tangents", posts: Post.all, inline_javascript: File.read("/app/public/javascripts/inline.js"), inline_styles: File.read("/app/public/stylesheets/styles.css"), root_path: true }
   end
 
   get '/posts/add' do
-    erb :"posts/add", locals: {}
+    erb :index, locals: { site_title: "Jordan Peterson Tangents", posts: Post.all, inline_javascript: File.read("/app/public/javascripts/inline.js"), inline_styles: File.read("/app/public/stylesheets/styles.css"), root_path: false }
   end
 
   post '/posts' do
