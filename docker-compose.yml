@@ -13,3 +13,12 @@ services:
       dockerfile: Dockerfile.webpack-asset-builder
     volumes:
       - ./:/app/
+  javascript_rendering_engine:
+    build:
+      context: .
+      dockerfile: Dockerfile.webpack-asset-builder
+    volumes:
+      - ./:/app/
+    command: node hypernova.js
+    ports:
+      - 3030:3030
